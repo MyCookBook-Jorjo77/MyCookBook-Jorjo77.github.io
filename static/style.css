@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+html {
+    font-family:Verdana,Tahoma, sans-serif;
+    font-size: 18px;
+    color: rgb(219, 205, 205);
+    box-sizing: border-box;
+    background: url(../asserts/background.jpg) rgba(7, 1, 31, 0.473);
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+* {
+    box-sizing: bord;
+}
+
+body {
+    width: 1520px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: auto;
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+
+}
+
+span {
+    font-weight: 700;
+}
+
+/* header  */
+
+header {
+    padding: 32px;
+    padding-left: 45px;
+    position: relative;
+    background-color: #a0a09f;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+    vertical-align: bottom;
+    display: inline;
+}
+
+h1 img {
+    height: 32px;
+    vertical-align: bottom;
+    margin-right: 8px;
+}
+
+h1 a {
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+}
+
+h1 a:visited {
+    color: black;
+}
+
+nav {
+    display: inline-block;
+    position: absolute;
+    right: 16px;
+    text-align: right;
+
+}
+
+nav div {
+    display: inline-block;
+    
+}
+
+nav a {
+    display: inline-block;
+    background-color: salmon;
+    padding: 8px 16px;
+    margin: 0 8px;
+    text-decoration: none;
+    color: white;
+}
+
+#user-greeting {
+    background-color: #6c8b47;
+}
+
+nav a:hover {
+    background-color: #6c8b47;
+    color: white;
+}
+
+a.active {
+    background-color: #6c8b47;
+    color: white;
+}
+
+/* header end */
+
+.containter {
+    width: 100%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 30px;
+    flex: 0 0 42%;
+    max-width: 42%;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn {
+    font-size: .75rem;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 600;
+    color: #55595c;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 0 solid transparent;
+    padding: .75rem 1.5rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    border-radius: 0;
+}
+
+.btn:hover {
+    background-color: #6c8b47;
+    color: white;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #1f9bcf;
+    border-color: #1f9bcf;
+}
+
+.btn-red {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: salmon;
+    border-color: salmon;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .75rem 1.5rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666d72;
+    background-color: #e8e8ee;
+    background-clip: padding-box;
+    border: 0 solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+
+
+}
+
+.card-body {
+    width: 550px;
+    height: auto;
+    min-height: 200px;
+    text-align: center;
+}
+
+img {
+    width: 550px;
+    height: auto;
+    background-color: white;
+}
+
+.is-valid {
+    border-left: 3px solid green;
+}
+
+.is-invalid {
+    border-left: 3px solid red;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;  
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.253);
+}
+
+#modal {
+    width: 350px;
+    background-color: white;
+    padding: 32px;
+    margin: auto;
+    margin-top: 15 vh;
+    text-align: center;
+    box-shadow: 0px 0px 15px 5px rgb(124, 124, 124);
+    cursor: pointer;
+}
+
+.modal-button {
+    height: 15%;
+    background-color: #646583;
+    padding: 14px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#search-input {
+    width: 250px;
+    padding: 14px;
+}
+
+input:placeholder-shown, textarea:placeholder-shown {
+    font-family: Verdana,Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+textarea {
+    height: 5em;
+    border: 2px solid black;
+    background-color: transparent;
+    padding: 1em 2em;
+    font-family: Verdana,Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+input {
+    font-family: Verdana,Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+
+
+h1 img {
+    height: 32px;
+    vertical-align: bottom;
+    margin-right: 8px;
+    width: auto;
+}
+
+/* recipe */
+article {
+    display: block;
+    width: 720px;
+    margin: 32px auto 32px auto;
+    background-color: #cccccc;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+}
+
+article h2 {
+    padding: 16px;
+    padding-left: 32px;
+    background-color: salmon;
+    border-radius: 16px 16px 0 0;
+}
+
+.band {
+    background-color: white;
+    padding: 32px;
+}
+
+.band::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.thumb {
+    width: 200px;
+    float: left;
+}
+
+.thumb>img {
+    max-width: 200px;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ingredients {
+    float: left;
+    margin-left: 32px;
+}
+
+.ingredients>ul {
+    margin-left: 32px;
+}
+
+.ingredients>ul>li {
+    margin-top: 16px;
+    font-weight: bolder;
+}
+
+.description {
+    padding: 32px;
+}
+
+.description>p {
+    margin: 16px 0 16px 32px;
+    font-weight: bolder;
+}
+
+.preview {
+    vertical-align: middle;
+}
+
+.preview::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.preview:hover {
+    background-color: salmon;
+    cursor: pointer;
+    box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title {
+    float: left;
+    width: 420px;
+}
+
+.title h2 {
+    background-color: transparent;
+}
+
+.small {
+    float: left;
+    background-color: white;
+    width: 300px;
+    text-align: center;
+    border-radius: 0 16px 16px 0;
+}
+
+.small>img {
+    max-width: 200px;
+    max-height: 150px;
+    margin: 16px auto;
+    display: block;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.controls {
+    padding: 13px 32px;
+    text-align: right;
+}
+
+.controls button {
+    padding: 4px 8px;
+    cursor: pointer;
+    margin: 0 4px;
+}
+
+.recent-recipes {
+    width: 500px;
+    margin: auto;
+}
+
+.recent-recipes::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.recent-space {
+    float: left;
+    display: block;
+    width: 50px;
+    height: 200px;
+}
+
+.recent {
+    float: left;
+    display: block;
+    width: 500px;
+    margin: 1;
+}
+
+.recent:hover {
+    cursor: pointer;
+    box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: salmon;
+}
+
+.recent-preview {
+    background-color: white;
+    padding: 6px 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.recent-preview>img {
+    max-width: 350px;
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+    float:inline-start;
+}
+
+.recent-title {
+    padding: 8px 16px;
+}
+
+.card, .card:visited {
+    color: black;
+}
+
+.form {
+    width: 650px;
+}
+
+.pagination>.btn-primary {
+    display: inline-block;
+    background-color: salmon;
+    padding: 8px 16px;
+    margin: 0 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.pagination>.btn-primary:hover {
+    background-color: #6c8b47;
+    color: white;
+}

@@ -1,6 +1,6 @@
 //import { html } from '../../node_modules/lit-html/lit-html.js';
 
-import { html } from './lib.js';
+import { html } from '../lib.js';
 import { getRecipeById, updateRecipe } from '../api/data.js';
 
 const editTemplate = (recipe, onSubmit, msg, invalidName, invalidSumary, invalidIngr, invalidSteps, invalidImg) => html`

@@ -9,7 +9,6 @@ import { createPage } from './views/create.js';
 import { dashboardPage } from './views/dashboard.js';
 import { detailsPage } from './views/details.js';
 import { editPage } from './views/edit.js';
-import { notify } from './views/notify.js';
 import { profilePage } from './views/profile.js';
 import { searchPage } from './views/search.js';
 

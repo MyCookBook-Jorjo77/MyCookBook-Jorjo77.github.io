@@ -1,6 +1,6 @@
 //import { html, render } from '../../node_modules/lit-html/lit-html.js';
 
-import { html, render } from './lib.js';
+import { html, render } from '../lib.js';
 
 import { addLike, createNewComment, deleteRecipe, getAllCommentsByRecipe, getAllLikes, getRecipeById, getLikeForRecipeFromSpecUser } from '../api/data.js';
 

@@ -1,6 +1,6 @@
  //import { html } from '../../node_modules/lit-html/lit-html.js';
 
-import { html } from './lib.js';
+import { html } from '../lib.js';
 import { getMyRecipes } from '../api/data.js';
 import { recipeTemplate } from './common/recipe.js';
 

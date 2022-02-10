@@ -1,4 +1,6 @@
-import { html } from '../../../node_modules/lit-html/lit-html.js';
+//import { html } from '../../../node_modules/lit-html/lit-html.js';
+
+import { html } from '../../lib.js';
 
 export const recipeTemplate = (recipe) => html`
 <a class="card" href=${`/details/${recipe._id}`} >

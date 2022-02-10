@@ -48,7 +48,6 @@ page('/create', decorateContext, createPage);
 page('/edit/:id', decorateContext, editPage);
 page('/my-recipes', decorateContext, profilePage);
 page('/search', decorateContext, searchPage);
-page('/notify', decorateContext, notify);
 
 
 page.start();

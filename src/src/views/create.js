@@ -1,7 +1,8 @@
-import { html } from '../../node_modules/lit-html/lit-html.js';
+//import { html } from '../../node_modules/lit-html/lit-html.js';
 
+import { html } from './lib.js';
 import { createRecipe } from "../api/data.js";
-import { notify } from './notify.js';
+
 
 const createTemplate = (onSubmit, msg, invalidName,  invalidSumary, invalidIngr, invalidSteps, invalidImg) => html`
 <section id="create-page" class="auth">

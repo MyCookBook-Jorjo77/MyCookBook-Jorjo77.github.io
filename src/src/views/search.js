@@ -1,5 +1,6 @@
-import { html } from '../../node_modules/lit-html/lit-html.js';
+//import { html } from '../../node_modules/lit-html/lit-html.js';
 
+import { html } from './lib.js';
 import { search } from '../api/data.js';
 
 const allRecipesTemplate = (recipe) => html `

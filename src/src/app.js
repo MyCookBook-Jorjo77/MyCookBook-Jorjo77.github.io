@@ -13,8 +13,10 @@ decorator middleware - има 3 роли:
 implement views
 */
 
-import { render } from '../node_modules/lit-html/lit-html.js';
-import page from '../node_modules/page/page.mjs';
+// import { render } from '../node_modules/lit-html/lit-html.js';
+// import page from '../node_modules/page/page.mjs';
+
+import { render, page } from './lib.js';
 
 import {logout as apiLogout } from './api/data.js';
 //import * as api from './api/data.js';

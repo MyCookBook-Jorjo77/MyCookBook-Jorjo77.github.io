@@ -1,20 +1,3 @@
-/*
-create universal request module (api.js) - UNIVERSAL(reusable) - make abstraction of http requests
-create application-specific requests - specific (data.js)
-setup routing using (page)
-create context decorator middleware (utility functions)
-
-decorator middleware - има 3 роли:
- 1. да вземе рендера (който е функция приемаща 2 параметъра - съдържанието и каде да го изобрази),
- 2. да го прекара през паршъл апликейшън и в контекста да сложим функция, която приема само един параметър, 
-който е съдържанието, тъй като мястото в което трябва да го отпечатим винаги е едно и също
-(правим си тук декорирана функция рендер, така че тя да си носи със себе си мястото кадето ще отпечатва).
-3. Да закача юзър записа от нашия сторидж.
-implement views
-*/
-
-// import { render } from '../node_modules/lit-html/lit-html.js';
-// import page from '../node_modules/page/page.mjs';
 
 import { render, page } from './lib.js';
 

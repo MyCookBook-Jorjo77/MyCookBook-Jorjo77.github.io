@@ -2,7 +2,7 @@
   "name": "MyCookBook",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/MyCookBook-Jorjo77/MyCookBook-Jorjo77.github.io/issues"
   },
-  "homepage": "https://github.com/MyCookBook-Jorjo77/MyCookBook-Jorjo77.github.io#readme",
-  "dependencies": {
-    "lit-html": "2.1.3",
-    "page": "1.11.6"
-  }
+  "homepage": "https://github.com/MyCookBook-Jorjo77/MyCookBook-Jorjo77.github.io#readme"
 }

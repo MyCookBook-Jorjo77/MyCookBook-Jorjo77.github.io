@@ -2,7 +2,7 @@ import { html } from '../../node_modules/lit-html/lit-html.js';
 
 import { login, register } from '../api/data.js';
 
-const loginTemplate = (onSubmit, errorMsg, isInvalidEmail, isInvalidPass) => html`
+const loginTemplate = (onSubmit, errorMsg, isInvalidUsername, isInvalidEmail, isInvalidPass) => html`
  <div class="container">
     <div class="row space-top">
         <div class="col-md-12">
@@ -22,8 +22,12 @@ const loginTemplate = (onSubmit, errorMsg, isInvalidEmail, isInvalidPass) => htm
                 }
 
                 <div class="form-group">
-                    <label class="form-control-label" for="email">Имейл</label>
-                    <input class=${'form-control' + (isInvalidEmail ? ' is-invalid' : '')} id="email" type="email" placeholder="user@abv.bg"name="email">
+                    <label class="form-control-label" for="email">Потребителско име</label>
+                    <input class=${'form-control' + (isInvalidUsername ? ' is-invalid' : '')} id="username" type="text" placeholder="username..."name="username">
+                </div>
+                <div class="form-group">
+                        <label class="form-control-label" for="email">Имейл</label>
+                        <input class=${'form-control' + (isInvalidEmail ? ' is-invalid' : '')} id="email" type="email"  placeholder="user@abv.bg" name="email">
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="password">Парола</label>
@@ -41,21 +45,22 @@ export async function loginPage(ctx) {
     async function onSubmit(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
-        const email = formData.get('email').trim();
+        const username = formData.get('username').trim();
+        const username = formData.get('email').trim();
         const password = formData.get('password').trim();
 
-        if ( email=='' || password=='') {
-            return ctx.render(loginTemplate(onSubmit, 'Необходимо е попълването на всички полета!', email=='', password==''))
+        if ( username=='' || username==''  || password=='') {
+            return ctx.render(loginTemplate(onSubmit, 'Необходимо е попълването на всички полета!', username=='', username=='', password==''))
         }
 
-        await login(email, password);
+        await login(username, username, password);
         event.target.reset();
         ctx.setUserNav();
         ctx.page.redirect('/');
     }
 }
 
-const registerTemplate = (onSubmit, errorMsg, isInvalidEmail, isInvalidPass, isInvalidRePass) => html`
+const registerTemplate = (onSubmit, errorMsg, isInvalidUsername, isInvalidEmail, isInvalidPass, isInvalidRePass) => html`
  <div class="container">
         <div class="row space-top">
             <div class="col-md-12">
@@ -74,6 +79,10 @@ const registerTemplate = (onSubmit, errorMsg, isInvalidEmail, isInvalidPass, isI
                     : ''
                     }
 
+                    <div class="form-group">
+                    <label class="form-control-label" for="email">Потребителско име</label>
+                    <input class=${'form-control' + (isInvalidUsername ? ' is-invalid' : '')} id="username" type="text" placeholder="username..."name="username">
+                    </div>
                     <div class="form-group">
                         <label class="form-control-label" for="email">Имейл</label>
                         <input class=${'form-control' + (isInvalidEmail ? ' is-invalid' : '')} id="email" type="email"  placeholder="user@abv.bg" name="email">
@@ -98,25 +107,26 @@ export async function registerPage(ctx) {
     async function onSubmit(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
+        const username = formData.get('username').trim();
         const email = formData.get('email').trim();
         const password = formData.get('password').trim();
         const repeatPass = formData.get('rePass').trim();
 
-        if (email=='' || password=='' || repeatPass=='') {
-            return ctx.render(registerTemplate(onSubmit, 'Необходимо е попълването на всички полета!', email=='', password=='', repeatPass==''))
+        if (username=='' ||email=='' || password=='' || repeatPass=='') {
+            return ctx.render(registerTemplate(onSubmit, 'Необходимо е попълването на всички полета!',username=='', email=='', password=='', repeatPass==''))
 
         }
 
         if (password.length < 4) {
-            return ctx.render(registerTemplate(onSubmit, 'Паролата трабва да е поне 4 символа', false, true, false))
+            return ctx.render(registerTemplate(onSubmit, 'Паролата трабва да е поне 4 символа', false, false, true, false))
         }
         
         if (password !== repeatPass) {
-            return ctx.render(registerTemplate(onSubmit, 'Паролите не съвпадат', false, true, true))
+            return ctx.render(registerTemplate(onSubmit, 'Паролите не съвпадат', false, false, true, true))
 
         }
 
-        await register(email, password);
+        await register(username, email, password);
         event.target.reset();
         ctx.setUserNav();
         ctx.page.redirect('/');

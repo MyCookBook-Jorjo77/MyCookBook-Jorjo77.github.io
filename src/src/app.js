@@ -62,7 +62,7 @@ function setUserNav() {
     const user = getUserData();
     if (user) {
         document.getElementById('user').style.display = '';
-        document.getElementById('user-greeting').textContent = `Добре дошъл ${user.email}`;
+        document.getElementById('user-greeting').textContent = `Добре дошъл ${user.username}`;
         document.getElementById('guest').style.display = 'none';
         page.redirect('/');
     } else {

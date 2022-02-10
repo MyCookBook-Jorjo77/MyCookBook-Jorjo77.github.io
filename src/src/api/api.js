@@ -1,4 +1,3 @@
-import {clearUserData, getUserData, setUserData} from '../utility.js';
 
 export const settings = {//data.js will set the host
     host:''
@@ -36,11 +35,14 @@ async function request(url, options) {
 function createOptions(method='get', body) {//ако няма подаден метод той винаги ще е 'get' 
     const options = {
         method,
-        headers: {}
+        headers: {
+         'X-Parse-Application-Id':'qeCjmTrUNQJQsnKTgpShLiYSTWWHtCw68bxlzekA',
+         'X-Parse-REST-API-Key' : 'qhpjMtZdZIj2nVecN8HL3LNJ8ltmF3YQjHi3BNe5' 
+        }
     };
-    const user = getUserData();
-    if (user) {
-        options.headers['X-Authorization'] = user.accessToken;//server response with this name:accessToken
+    const token = sessionStorage.getItem('authToken');
+    if (token) {
+        options.headers['X-Parse-Session-Token'] = token;//server response with this name:accessToken
     }
     if (body) {
         options.headers['Content-Type'] = 'application/json';
@@ -66,18 +68,24 @@ export async function del(url) {
 }
 
 //authentication functions (login, register, logout)
-export async function login(email, password) {
-    const result = await post(settings.host + '/users/login', {email, password});
-    setUserData(result);//save user into sessionStorage!
+export async function login(username, password) {
+    const result = await post(settings.host + '/login', {username, password});
+    sessionStorage.setItem('username', username);
+    sessionStorage.setItem('authToken', result.accessToken);
+    sessionStorage.setItem('userId', result._id);
     return result;//if someone upstears of chain need the result
 }
-export async function register(email, password) {
-    const result = await post(settings.host + '/users/register', {email, password});
-    setUserData(result);
+export async function register(email, username, password) {
+    const result = await post(settings.host + '/users', {username, email, password});
+    sessionStorage.setItem('username', username);
+    sessionStorage.setItem('authToken', result.accessToken);
+    sessionStorage.setItem('userId', result._id);
     return result;
 }
 export function logout() {
-    const result = get(settings.host + '/users/logout');
-    clearUserData();
+    const result = post(settings.host + '/logout', {});
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('userId', result._id);
     return result;
 }
